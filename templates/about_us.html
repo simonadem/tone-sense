@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="about-wrapper">
+    <!--hero section-->
+    <section class="about-hero">
+        <p class="section-title">About Tone Sense</p>
+        <h2 class="section-subheading">An AI powered speech emotion recognition application</h2>
+    </section>
+
+    <!--about body-->
+    <section class="about-body">
+        <p>Tone Sense is a web application that analyses the emotional tone behind your voice. Record a short voice note and our AI model will detect your emotional state and provide you with instant, personalised feedback.</p>
+
+        <h3>How it works</h3>
+        <p>When you record your voice, the audio is processed in real time. A mel spectrogram is extracted from your recording along with delta features that capture how your voice changes over time. These are passed through a deep learning model trained on the RAVDESS emotional speech dataset, which classifies your voice into one of seven emotions — Calm, Happy, Sad, Angry, Fearful, Disgust, or Surprised.</p>
+    </section>
+
+    <!--accordion section-->
+    <section class="accordion-section">
+        <div class="accordion-item">
+            <button class="accordion-btn">Privacy Policy</button>
+            <div class="accordion-content">
+                <p>Tone Sense does not store your voice recordings. Once your audio has been analysed it is immediately deleted from the server. Only the the detected emotion and confidence score are saved to your personal history. Your email address is encrypted and never stored in plain text. You can delete your account and all associated data at any time from your dashboard.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-btn">Terms of Service</button>
+            <div class="accordion-content">
+                <p>Tone Sense is a research project developed as part of a BSc Computer Science Individual Project. By using this application you agree to use it for personal, non-commercial purposes only. The emotion detection results are provided for informational purposes only and should not be used as a substitute for professional medical or psychological advice. The developer is not liable for any decisions made based on the results provided by the application.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-btn">User Rights and Security</button>
+            <div class="accordion-content">
+                <p>You have the right to access, review, and delete all data associated with your account at any time. Your email is encrypted using Fernet symmetric encryption and is never stored in plain text. Your voice recordings are processed locally and deleted immediately after analysis. You may withdraw from using the application at any time by deleting your account from your dashboard.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-btn">Credits</button>
+            <div class="accordion-content">
+                <p>This project could not have been completed without the following free icon resources from Flaticon. Special thanks to the artists below for allowing us to utilise their work.</p>
+                <ul class="credits-list">
+                    <li>Special thanks to the following Flaticon creators: 
+                        <a href="https://www.flaticon.com/free-icons/fcv" title="fcv icons" class="credits-link">Nack_Thanakorn</a>, 
+                        <a href="https://www.flaticon.com/free-icons/love-lock" title="love lock icons" class="credits-link">Afian Rochmah Afif</a>, 
+                        <a href="https://www.flaticon.com/authors/freepik" title="Freepik" class="credits-link">Freepik</a>, 
+                         <a href="https://www.flaticon.com" title="SBTS2018" class="credits-link">SBTS2018</a>, 
+                         <a href="https://www.flaticon.com" title="Satria Arnata" class="credits-link">Satria Arnata</a>, 
+                         <a href="https://www.flaticon.com" title="Dewi Sari" class="credits-link">Dewi Sari</a>, and 
+                         <a href="https://www.flaticon.com" title="Uniconlabs" class="credits-link">Uniconlabs</a>.
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    document.querySelectorAll('.accordion-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.parentElement;
+            item.classList.toggle('open');
+        });
+    });
+</script>
+{% endblock %}

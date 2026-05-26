@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Set a New Password</h2>
+<form method="POST">
+    <p>The password must be 8+ characters, contain a number, a special character, and an uppercase letter </p>
+    <input type="password" name="psw" placeholder="New Password" required>
+    <button type="submit">Update Password</button>
+</form>
+{% endblock %}

@@ -1,0 +1,188 @@
+{% extends "layout.html" %}
+{% block content %}
+<!-- hero section, welcome page for users -->
+<section class="hero-section">
+    <div class="wave-text">
+        <!--welcome to tone sense text -->
+        <span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span>
+        <span>&nbsp;</span><span>t</span><span>o</span><span>&nbsp;</span>
+        <span>T</span><span>o</span><span>n</span><span>e</span>
+        <span>&nbsp;</span><span>S</span><span>e</span><span>n</span><span>s</span><span>e</span>
+    </div>
+    <!--subheading -->
+    <div class="hero-inner">
+        <p class="section-title">An AI Powered Emotion Recognition Application</p>
+        <p class="section-subheading">
+            Scroll down and further explore Tone Sense
+        </p>
+        <!--sound wave animation -->
+        <div class="wave">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!--get started, sign in buttons -->
+        <div class="hero-buttons">
+            <a href="{{ url_for('signup') }}" class="btn-primary">Get Started</a>
+            <a href="{{ url_for('login') }}" class="btn-primary">Sign In</a>
+        </div>
+    </div>
+    <!--end of the section -->
+</section>
+
+
+
+<!--start of second section -->
+<section class="section">
+    <!--heading -->
+    <p class="section-title">How Tone Sense Works</p>
+    <!--sub heading -->
+    <h2 class="section-subheading">Data Handling and Speech Analysis</h2>
+    <div class="card-container">
+        <!--first analysis card -->
+        <div class="analysis-card">
+            <h3>Speech Analysis</h3>
+            <div class="mySlides fade" style="display: block;">
+                <img src="{{ url_for('static', filename='images/home/happy.png') }}" class="emotion-img">
+                <h4>Happy</h4>
+                <p>High pitch & fast tempo indicate excitement and engagement.</p>
+            </div>
+            <div class="mySlides fade" style="display: none;">
+                <img src="{{ url_for('static', filename='images/home/sad.png') }}" class="emotion-img">
+                <h4>Sad</h4>
+                <p>Softer, lower voice with slower speech and falling intonation.</p>
+            </div>
+            <div class="mySlides fade" style="display: none;">
+                <img src="{{ url_for('static', filename='images/home/angry.png') }}" class="emotion-img">
+                <h4>Angry</h4>
+                <p>Louder, sharper tone with faster, forceful delivery and tense pitch shifts.</p>
+            </div>
+            <div class="mySlides fade" style="display: none;">
+                <img src="{{ url_for('static', filename='images/home/surprised.png') }}" class="emotion-img">
+                <h4>Surprised</h4>
+                <p>Sudden jump in pitch and energy with a quick, sharp vocal onset.</p>
+            </div>
+            <div class="mySlides fade" style="display: none;">
+                <img src="{{ url_for('static', filename='images/home/neutral.png') }}" class="emotion-img">
+                <h4>Neutral</h4>
+                <p>Balanced pitch, steady rhythm, and minimal expressive variation.</p>
+            </div>
+            <div class="mySlides fade" style="display: none;">
+                <img src="{{ url_for('static', filename='images/home/calm.png') }}" class="emotion-img">
+                <h4>Calm</h4>
+                <p>Even, steady voice with relaxed pacing and smooth tone.</p>
+            </div>
+            <div class="mySlides fade" style="display: none;">
+                <img src="{{ url_for('static', filename='images/home/fearful.png') }}" class="emotion-img">
+                <h4>Fearful</h4>
+                <p>Higher, slightly shaky or breathy voice with rushed or uneven pacing.</p>
+            </div>
+            <div class="mySlides fade" style="display: none;">
+                <img src="{{ url_for('static', filename='images/home/disgust.png') }}" class="emotion-img">
+                <h4>Disgust</h4>
+                <p>Tight, slightly lowered tone with clipped or strained delivery.</p>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <!--second analysis card -->
+        <div class="card">
+            <h3>Mood Trends</h3>
+            <div class="trendSlides fade" style="display: block;">
+                <img src="{{ url_for('static', filename='images/home/track.png') }}" class="tracker-img">
+                <h4>Tracking Emotional States</h4>
+                <p>Track your emotional states over time to identify patterns.</p>
+            </div>
+            <div class="trendSlides fade" style="display: none;">
+                <img src="{{ url_for('static', filename='images/home/visualization.png') }}" class="tracker-img">
+                <h4>Deep Insights</h4>
+                <p>Receive concise visualizations related to the discovered speech features with AI stats.</p>
+            </div>
+            <div class="trendSlides fade" style="display: none;">
+                <img src="{{ url_for('static', filename='images/home/insight.png') }}" class="tracker-img">
+                <h4>Feedback</h4>
+                <p>Understand the "why" behind your speech characteristics.</p>
+            </div>
+            <a class="prev" onclick="plusTrendSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusTrendSlides(1)">&#10095;</a>
+        </div>
+        <!--third analysis card -->
+        <div class="card">
+            <h3>Privacy & Security</h3>
+            <div class="privSlides fade" style="display: none;">
+                <img src="{{ url_for('static', filename='images/home/encrypt.png') }}" class="tracker-img">
+                <h4>Encryption</h4>
+                <p>We use end-to-end encryption for all audio transmissions.</p>
+            </div>
+            <div class="privSlides fade" style="display: none;">
+                <img src="{{ url_for('static', filename='images/home/authority.png') }}" class="tracker-img">
+                <h4>Data Authority</h4>
+                <p>Complete authority over your personal data and data deletion upon your request.</p>
+            </div>
+            <div class="privSlides fade" style="display: block;">
+                <img src="{{ url_for('static', filename='images/home/privacy.png') }}" class="tracker-img">
+                <h4>Anonymized Data</h4>
+                <p>Your voice data is securely processed and anonymized.</p>
+            </div>
+            <a class="prev" onclick="plusPrivSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusPrivSlides(1)">&#10095;</a>
+        </div>
+    </div>
+    <!--end of section -->
+</section>
+
+
+
+
+
+
+<!--start of third section -->
+<section class="section-last">
+    <!--heading -->
+    <p class="section-title">Tone Sense Features</p>
+    <!--subheading -->
+    <h2 class="section-subheading">Tone Sense analyzes your speech features and provides concise feedback</h2>
+    <div class="ts-features-grid">
+        <div class="ts-feat-card reveal">
+            <div class="ts-feat-dot"></div>
+            <h4>8 Emotion Detection</h4>
+            <p>Recognises happy, sad, angry, fearful, calm, neutral, surprised, and disgust — giving you a full emotional spectrum from every clip.</p>
+        </div>
+        <div class="ts-feat-card reveal">
+            <div class="ts-feat-dot"></div>
+            <h4>Visual Dashboard</h4>
+            <p>Interactive charts and waveform visualisations make complex acoustic data instantly readable, even without a technical background.</p>
+        </div>
+        <div class="ts-feat-card reveal">
+            <div class="ts-feat-dot"></div>
+            <h4>Trend Tracking</h4>
+            <p>Log sessions over time and watch your emotional patterns emerge. Spot your natural rhythms and track how you evolve.</p>
+        </div>
+        <div class="ts-feat-card reveal">
+            <div class="ts-feat-dot"></div>
+            <h4>Privacy First</h4>
+            <p>Your voice data is anonymised and encrypted end-to-end. Delete everything at any time — you are always in full control.</p>
+        </div>
+        <div class="ts-feat-card reveal">
+            <div class="ts-feat-dot"></div>
+            <h4>RAVDESS-Trained Model</h4>
+            <p>Built on the gold-standard RAVDESS dataset, our model has learned the nuanced vocal cues that distinguish each emotional state.</p>
+        </div>
+        <div class="ts-feat-card reveal">
+            <div class="ts-feat-dot"></div>
+            <h4>Plain-Language Summaries</h4>
+            <p>ToneSense translates acoustic data into readable text that explains the "why" behind your results.</p>
+        </div>
+    </div>
+    <!--end of section -->
+</section>
+
+<script>
+    
+</script>
+
+{% endblock %}

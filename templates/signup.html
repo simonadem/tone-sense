@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+<!--wrapping the content on the page-->
+<div class="auth-container">
+<!-- text and heading-->
+<h2>Create an Account</h2>
+<p>Join us to start tracking your speech patterns and mood trends.</p>
+<!-- signup box-->
+<form action="/signup" method="POST" class="signup-form">
+    <!-- email field-->
+    <div>
+        <label>Email Address:</label>
+        <input type="email" name="email" required placeholder="example@email.com" class="field-input">
+    </div>
+    <!-- password field-->
+    <div>
+        <label>Password:</label>
+        <input type="password" name="psw" id="password" required class="field-input">
+    </div>
+    <!-- consent form-->
+        <input type="checkbox" name="consent" id="consent" required>
+        <label for="consent">
+            I consent to the preprocessing of my voice data for emotion analysis.
+            I understand my data is anonymized and I can delete my history at any time.
+        </label>
+    <!--signup button-->
+    <div>
+        <button type="submit" class="btn-primary">Sign Up</button>
+    </div>
+    <div class="login-prompt">
+        <span>Already have an account?</span>
+        <a href="{{ url_for('login') }}" class="field-link">Login here</a>
+    </div>
+</form>
+{% endblock %}

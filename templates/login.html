@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+<!--wrapping the content on the page-->
+<div class="auth-container">
+<!-- login box -->
+<h2>Login</h2>
+<form action="/login" method="POST" class="login-form">
+    <!-- email field -->
+    <div>
+        <label>Email:</label>
+        <input type="email" name="email" required class="field-input">
+    </div>
+    <!-- password field -->
+    <div>
+        <label>Password:</label>
+        <input type="password" name="psw" required class="field-input">
+    </div>
+    <!-- forgot password field -->
+        <a href="{{ url_for('forgot_psw') }}" class="field-link">
+            Forgot Password
+        </a>
+        <!-- login button-->
+        <button type="submit" class="btn-primary">Login</button>
+</form>
+</div>
+{% endblock %}

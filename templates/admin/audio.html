@@ -1,0 +1,15 @@
+<h1> Audio Data </h1>
+<table border="1">
+    <tr>
+        <th>Prediction</th>
+        <th>Confidence</th>
+        <th>Date</th>
+    </tr> 
+    {% for item in data %}
+    <tr>
+        <td>{{ item.get_prediction() }}</td>
+        <td>{{ item.get_confidence() }}</td>
+        <td>{{ item.created_at() }}</td>
+    </tr>
+    {% endfor %}
+</table>
