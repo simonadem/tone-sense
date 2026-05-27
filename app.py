@@ -31,6 +31,7 @@ import os
 # importing files
 from database import db 
 from models import User 
+from werkzeug.middleware.proxy_fix import ProxyFix
 # audio analysis
 import librosa
 # neccessary for encryption
@@ -41,6 +42,7 @@ cipher = Fernet(fernet_key.encode())
 
 # creating the app instance
 app = Flask(__name__)
+app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 # import the model
 from model import predict_emotion
 
