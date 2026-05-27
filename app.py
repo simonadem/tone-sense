@@ -52,6 +52,10 @@ app.register_blueprint(admin_bp)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'super_secret_key')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# cookies 
+app.config['SESSION_COOKIE_SECURE'] = True
+app.config['SESSION_COOKIE_HTTPONLY'] = True
+app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 # connecting database to the app
 db.init_app(app)
 # initializing flask login
