@@ -76,12 +76,6 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 
-# https enforcement for secure connection
-#@app.before_request
-#defforce_https():
-    #if not request.is_secure: 
-    # return redirect(request.url.replace('http://', 'https://'))
-
 # home page 
 @app.route('/')
 def home():
@@ -321,9 +315,9 @@ def delete_account():
     flash('Your account has been deleted.')
     return redirect(url_for('home'))
 
+with app.app_context():
+    db.create_all()
+
 if __name__=='__main__':
-    with app.app_context():
-        # creates a table if it doesnt exist
-        db.create_all() 
     app.run(debug=True)
 
