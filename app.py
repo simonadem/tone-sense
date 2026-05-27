@@ -57,7 +57,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # cookies 
 app.config['SESSION_COOKIE_SECURE'] = True
 app.config['SESSION_COOKIE_HTTPONLY'] = True
-app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
+app.config['SESSION_COOKIE_SAMESITE'] = 'None'
 # connecting database to the app
 db.init_app(app)
 # initializing flask login
