@@ -1,4 +1,4 @@
-// POINTER HOMEPAGE keeps track of current slides
+// pointer homepage keeps track of current slides
 let slideTrackers = {
   "mySlides": 1,
   "trendSlides": 1,
